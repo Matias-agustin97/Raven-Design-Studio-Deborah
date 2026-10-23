@@ -189,21 +189,10 @@ a {
 }
 
 .brand__mark {
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  transform: rotate(45deg);
-  background: var(--gradient);
-  box-shadow: 0 0 18px rgba(47, 107, 255, 0.6);
-  position: relative;
-}
-
-.brand__mark::after {
-  content: '';
-  position: absolute;
-  inset: 7px;
-  border-radius: 50%;
-  background: var(--gold);
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(47, 107, 255, 0.5));
 }
 
 .nav {
@@ -326,23 +315,11 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 96px;
-  height: 96px;
+  width: 170px;
+  height: 170px;
   translate: -50% -50%;
-  border-radius: 28px;
-  rotate: 45deg;
-  background: var(--gradient);
-  box-shadow: 0 0 60px rgba(47, 107, 255, 0.55), 0 0 120px rgba(217, 70, 239, 0.25);
+  filter: drop-shadow(0 0 18px rgba(47, 107, 255, 0.55));
   animation: pulse 4s ease-in-out infinite;
-}
-
-.orbit__core::after {
-  content: '';
-  position: absolute;
-  inset: 32px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 20px var(--gold);
 }
 
 .orbit__spin {
@@ -378,12 +355,18 @@ a {
   animation: spin 40s linear infinite reverse;
 }
 
+.orbit__chip svg {
+  width: 50%;
+  height: 50%;
+  filter: drop-shadow(0 0 6px var(--c));
+}
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
 @keyframes pulse {
-  50% { box-shadow: 0 0 80px rgba(34, 211, 238, 0.55), 0 0 140px rgba(217, 70, 239, 0.35); }
+  50% { filter: drop-shadow(0 0 26px rgba(47, 107, 255, 0.45)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -537,6 +520,11 @@ a {
   color: var(--c);
   border: 1px solid var(--c);
   background: color-mix(in srgb, var(--c) 12%, transparent);
+}
+
+.tech__badge svg {
+  width: 26px;
+  height: 26px;
 }
 
 .tech__uses {
@@ -817,11 +805,7 @@ a {
     font-size: 0.9rem;
   }
   .orbit__core {
-    width: 72px;
-    height: 72px;
-    border-radius: 20px;
-  }
-  .orbit__core::after {
-    inset: 24px;
+    width: 120px;
+    height: 120px;
   }
 }

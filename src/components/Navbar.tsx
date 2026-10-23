@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import RavenLogo from './RavenLogo'
 
 const links = [
   { href: '#servicios', label: 'Servicios' },
@@ -25,7 +26,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled || open ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         <a href="#inicio" className="brand" onClick={close}>
-          <span className="brand__mark" aria-hidden="true" />
+          <RavenLogo className="brand__mark" />
           Raven Design
         </a>
         <button

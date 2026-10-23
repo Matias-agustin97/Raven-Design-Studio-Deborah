@@ -1,5 +1,7 @@
 import type { CSSProperties } from 'react'
 import { stack } from '../data'
+import TechLogo from './TechLogo'
+import RavenLogo from './RavenLogo'
 
 export default function Hero() {
   return (
@@ -27,7 +29,7 @@ export default function Hero() {
         <div className="orbit" aria-hidden="true">
           <div className="orbit__ring orbit__ring--1" />
           <div className="orbit__ring orbit__ring--2" />
-          <div className="orbit__core" />
+          <RavenLogo className="orbit__core" />
           <div className="orbit__spin">
             {stack.map((t, i) => (
               <span
@@ -35,7 +37,9 @@ export default function Hero() {
                 className="orbit__chip"
                 style={{ '--i': i, '--n': stack.length, '--c': t.color } as CSSProperties}
               >
-                <span>{t.short}</span>
+                <span title={t.name}>
+                  <TechLogo name={t.name} />
+                </span>
               </span>
             ))}
           </div>

@@ -1,9 +1,11 @@
+import RavenLogo from './RavenLogo'
+
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
         <a href="#inicio" className="brand">
-          <span className="brand__mark" aria-hidden="true" />
+          <RavenLogo className="brand__mark" />
           Raven Design
         </a>
         <p className="muted">Desarrollo web · Community manager · Google Ads · Hosting</p>

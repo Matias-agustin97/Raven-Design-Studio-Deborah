@@ -1,5 +1,6 @@
 import { useState, type CSSProperties } from 'react'
 import { stack, type Layer } from '../data'
+import TechLogo from './TechLogo'
 
 type Filter = 'Todo' | Layer
 
@@ -35,7 +36,9 @@ export default function Stack() {
           {visible.map((t) => (
             <article key={t.name} className="card tech" style={{ '--c': t.color } as CSSProperties}>
               <div className="tech__top">
-                <span className="tech__badge">{t.short}</span>
+                <span className="tech__badge" title={t.name}>
+                  <TechLogo name={t.name} />
+                </span>
                 <span className="tag">{t.layer}</span>
               </div>
               <h3>{t.name}</h3>
